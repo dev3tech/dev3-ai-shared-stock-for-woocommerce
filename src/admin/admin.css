@@ -1,0 +1,110 @@
+/* Plugin-specific admin styles. Uses kit tokens; everything is scoped to .dev3ss-root. */
+.dev3ss-root .dev3ss-stack { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.dev3ss-root .dev3ss-grow { flex: 1 1 auto; }
+.dev3ss-root .dev3ss-muted { color: var( --dev3ss-text-subtle ); font-size: 13px; }
+.dev3ss-root .dev3ss-sku { display: block; font-size: 12px; margin-top: 2px; }
+.dev3ss-root .dev3ss-subhead { font-size: 14px; font-weight: 600; margin: 8px 0 0; color: var( --dev3ss-text ); }
+.dev3ss-root .dev3ss-pad { padding: 16px; }
+.dev3ss-root .dev3ss-toolbar { padding: 12px 16px; border-bottom: 1px solid var( --dev3ss-border ); }
+.dev3ss-root .dev3ss-toolbar .dev3ss-ui-field { margin: 0; min-width: 160px; flex: 1 1 180px; max-width: 280px; }
+.dev3ss-root .dev3ss-grid2, .dev3ss-root .dev3ss-grid3 { display: grid; gap: 12px; grid-template-columns: repeat( auto-fit, minmax( 180px, 1fr ) ); }
+.dev3ss-root .dev3ss-grid3 { grid-template-columns: repeat( auto-fit, minmax( 150px, 1fr ) ); }
+
+.dev3ss-root .dev3ss-delta { font-variant-numeric: tabular-nums; font-weight: 600; white-space: nowrap; }
+.dev3ss-root .dev3ss-delta.is-neg { color: var( --dev3ss-danger ); }
+.dev3ss-root .dev3ss-delta.is-pos { color: var( --dev3ss-success ); }
+
+.dev3ss-root .dev3ss-list { list-style: none; margin: 0; padding: 0; }
+.dev3ss-root .dev3ss-list li { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; padding: 10px 0; border-bottom: 1px solid var( --dev3ss-border ); margin: 0; }
+.dev3ss-root .dev3ss-list li:last-child { border-bottom: 0; }
+.dev3ss-root .dev3ss-list li > span:nth-child( 2 ) { flex: 1 1 200px; min-width: 0; }
+
+/* Usage chart */
+.dev3ss-root .dev3ss-chart { margin: 0 0 12px; }
+.dev3ss-root .dev3ss-chart__plot { position: relative; }
+.dev3ss-root .dev3ss-chart svg { width: 100%; height: calc( 100% - 18px ); display: block; overflow: visible; }
+.dev3ss-root .dev3ss-chart__bar { fill: var( --dev3ss-brand ); opacity: .85; }
+.dev3ss-root .dev3ss-chart__bar.is-hover { opacity: 1; fill: var( --dev3ss-brand-ink ); }
+.dev3ss-root .dev3ss-chart__axis { stroke: var( --dev3ss-border-strong ); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.dev3ss-root .dev3ss-chart__rate { stroke: var( --dev3ss-text-subtle ); stroke-width: 1.5; stroke-dasharray: 4 4; vector-effect: non-scaling-stroke; }
+.dev3ss-root .dev3ss-chart__labels { display: flex; justify-content: space-between; font-size: 12px; color: var( --dev3ss-text-subtle ); height: 18px; align-items: end; }
+.dev3ss-root .dev3ss-chart__tip { position: absolute; top: 0; transform: translateX( -50% ); background: var( --dev3ss-text ); color: #fff; font-size: 12px; padding: 4px 8px; border-radius: var( --dev3ss-radius-sm ); pointer-events: none; white-space: nowrap; display: flex; gap: 6px; align-items: baseline; }
+.dev3ss-root .dev3ss-chart__tip span { opacity: .8; }
+.dev3ss-root .dev3ss-chart__caption { font-size: 12px; color: var( --dev3ss-text-subtle ); margin-top: 4px; }
+.dev3ss-root .dev3ss-chart__key { display: inline-flex; align-items: center; gap: 6px; }
+.dev3ss-root .dev3ss-chart__key-rate { display: inline-block; width: 16px; border-top: 2px dashed var( --dev3ss-text-subtle ); }
+.dev3ss-root .dev3ss-chart__empty { color: var( --dev3ss-text-subtle ); background: var( --dev3ss-surface-sunken, #f6f7f9 ); padding: 24px 16px; border-radius: var( --dev3ss-radius ); text-align: center; margin: 0 0 12px; }
+.dev3ss-root .dev3ss-spark { stroke: var( --dev3ss-brand ); display: block; }
+
+.dev3ss-root .dev3ss-explain { margin: 0 0 12px; line-height: 1.6; }
+.dev3ss-root .dev3ss-ai-box { border: 1px solid var( --dev3ss-brand-line ); background: var( --dev3ss-brand-soft ); border-radius: var( --dev3ss-radius ); padding: 12px 14px; margin: 0 0 8px; }
+.dev3ss-root .dev3ss-ai-box p { margin: 6px 0; line-height: 1.55; }
+.dev3ss-root .dev3ss-ai-box ul { margin: 6px 0 0 18px; list-style: disc; }
+.dev3ss-root .dev3ss-callout { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; justify-content: space-between; padding: 10px 12px; border-radius: var( --dev3ss-radius ); background: var( --dev3ss-success-soft ); color: var( --dev3ss-success ); }
+
+/* Product picker */
+.dev3ss-root .dev3ss-picker__list { max-height: 280px; overflow: auto; border: 1px solid var( --dev3ss-border ); border-radius: var( --dev3ss-radius ); margin-top: 8px; }
+.dev3ss-root .dev3ss-picker__item { display: flex; flex-direction: column; gap: 4px; width: 100%; text-align: start; background: none; border: 0; border-bottom: 1px solid var( --dev3ss-border ); padding: 10px 12px; cursor: pointer; color: var( --dev3ss-text ); min-height: 44px; font: inherit; }
+.dev3ss-root .dev3ss-picker__item:last-child { border-bottom: 0; }
+.dev3ss-root .dev3ss-picker__item:hover { background: var( --dev3ss-brand-soft ); }
+.dev3ss-root .dev3ss-picker__item:focus-visible { outline: none; box-shadow: inset 0 0 0 2px var( --dev3ss-brand ); }
+.dev3ss-root .dev3ss-picker__item.is-selected { background: var( --dev3ss-brand-soft ); box-shadow: inset 3px 0 0 var( --dev3ss-brand ); }
+.dev3ss-root .dev3ss-picker__name { font-weight: 600; }
+.dev3ss-root .dev3ss-picker__meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 12px; color: var( --dev3ss-text-subtle ); }
+.dev3ss-root .dev3ss-picker__list .dev3ss-ui-skeleton { margin: 12px; }
+.dev3ss-root .dev3ss-details { border: 1px solid var( --dev3ss-border ); border-radius: var( --dev3ss-radius ); padding: 8px 12px; }
+.dev3ss-root .dev3ss-details summary { cursor: pointer; font-weight: 600; min-height: 32px; display: flex; align-items: center; }
+
+/* Alerts */
+.dev3ss-root .dev3ss-alerts { list-style: none; margin: 0; padding: 0; }
+.dev3ss-root .dev3ss-alert { display: flex; flex-wrap: wrap; gap: 12px 16px; justify-content: space-between; padding: 16px; border-bottom: 1px solid var( --dev3ss-border ); margin: 0; border-inline-start: 3px solid transparent; }
+.dev3ss-root .dev3ss-alert:last-child { border-bottom: 0; }
+.dev3ss-root .dev3ss-alert.is-danger { border-inline-start-color: var( --dev3ss-danger ); }
+.dev3ss-root .dev3ss-alert.is-warning { border-inline-start-color: var( --dev3ss-warning ); }
+.dev3ss-root .dev3ss-alert__main { flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+.dev3ss-root .dev3ss-alert__msg { margin: 0; font-size: 14px; }
+.dev3ss-root .dev3ss-alert__actions { display: flex; gap: 8px; align-items: flex-start; flex-wrap: wrap; }
+.dev3ss-root .dev3ss-fix { border: 1px dashed var( --dev3ss-brand-line ); border-radius: var( --dev3ss-radius ); padding: 12px; display: flex; flex-direction: column; gap: 8px; background: var( --dev3ss-surface ); }
+.dev3ss-root .dev3ss-fix p { margin: 0; }
+.dev3ss-root .dev3ss-fix__head { display: flex; gap: 8px; align-items: center; }
+
+/* Setup proposals */
+.dev3ss-root .dev3ss-proposal { border: 1px solid var( --dev3ss-border ); border-radius: var( --dev3ss-radius ); padding: 16px; display: flex; flex-direction: column; gap: 12px; opacity: .75; }
+.dev3ss-root .dev3ss-proposal.is-on { opacity: 1; border-color: var( --dev3ss-brand-line ); }
+.dev3ss-root .dev3ss-proposal__head { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.dev3ss-root .dev3ss-proposal p { margin: 0; }
+.dev3ss-root .dev3ss-mini { width: 100%; border-collapse: collapse; font-size: 13px; }
+.dev3ss-root .dev3ss-mini th { text-align: start; font-weight: 600; color: var( --dev3ss-text-muted ); padding: 6px 8px; border-bottom: 1px solid var( --dev3ss-border ); }
+.dev3ss-root .dev3ss-mini td { padding: 6px 8px; border-bottom: 1px solid var( --dev3ss-border ); vertical-align: middle; }
+.dev3ss-root .dev3ss-mini td:last-child, .dev3ss-root .dev3ss-mini th:last-child { width: 130px; }
+.dev3ss-root .dev3ss-mini .dev3ss-ui-field { margin: 0; }
+
+/* Ask chat */
+.dev3ss-root .dev3ss-chat { display: flex; flex-direction: column; gap: 12px; min-height: 260px; max-height: 56vh; overflow-y: auto; padding: 4px 2px 8px; }
+.dev3ss-root .dev3ss-chat__intro p { margin: 0 0 8px; color: var( --dev3ss-text-muted ); }
+.dev3ss-root .dev3ss-msg { max-width: min( 640px, 92% ); padding: 10px 14px; border-radius: 12px; background: var( --dev3ss-surface ); border: 1px solid var( --dev3ss-border ); }
+.dev3ss-root .dev3ss-msg p { margin: 4px 0; line-height: 1.55; white-space: pre-wrap; }
+.dev3ss-root .dev3ss-msg.is-user { align-self: flex-end; background: var( --dev3ss-brand ); border-color: var( --dev3ss-brand ); color: #fff; }
+.dev3ss-root .dev3ss-msg.is-error { border-color: var( --dev3ss-danger ); }
+.dev3ss-root .dev3ss-msg__links { display: flex; flex-wrap: wrap; gap: 12px; font-size: 13px; }
+.dev3ss-root .dev3ss-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 12px; }
+.dev3ss-root .dev3ss-chip { border: 1px solid var( --dev3ss-brand-line ); background: var( --dev3ss-surface ); color: var( --dev3ss-brand-ink ); border-radius: 999px; padding: 8px 14px; min-height: 40px; cursor: pointer; font: inherit; font-size: 13px; }
+.dev3ss-root .dev3ss-chip:hover { background: var( --dev3ss-brand-soft ); }
+.dev3ss-root .dev3ss-chip:focus-visible { outline: none; box-shadow: var( --dev3ss-focus ); }
+.dev3ss-root .dev3ss-chat__form { display: flex; gap: 8px; margin-bottom: 12px; }
+.dev3ss-root .dev3ss-chat__form .dev3ss-ui-input { flex: 1 1 auto; min-width: 0; }
+
+/* PO drawer */
+.dev3ss-root .dev3ss-dl { display: grid; grid-template-columns: max-content 1fr; gap: 8px 16px; margin: 0; }
+.dev3ss-root .dev3ss-dl dt { font-weight: 600; color: var( --dev3ss-text-muted ); }
+.dev3ss-root .dev3ss-dl dd { margin: 0; min-width: 0; }
+.dev3ss-root .dev3ss-mail { white-space: pre-wrap; font-family: inherit; background: var( --dev3ss-surface-sunken, #f6f7f9 ); padding: 12px; border-radius: var( --dev3ss-radius ); margin: 0; overflow-wrap: anywhere; }
+.dev3ss-root .dev3ss-file { display: flex; flex-direction: column; gap: 6px; }
+.dev3ss-root .dev3ss-file input[type="file"] { max-width: 100%; }
+
+@media ( max-width: 600px ) {
+	.dev3ss-root .dev3ss-dl { grid-template-columns: 1fr; gap: 2px; }
+	.dev3ss-root .dev3ss-dl dd { margin-bottom: 8px; }
+	.dev3ss-root .dev3ss-toolbar .dev3ss-ui-field { max-width: none; }
+	.dev3ss-root .dev3ss-chat__form { flex-direction: column; }
+}

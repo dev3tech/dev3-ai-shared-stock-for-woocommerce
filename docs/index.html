@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DEV3 AI Shared Stock &amp; Inventory — Documentation</title>
+<style>
+	:root { --ink:#111827; --muted:#4b5563; --line:#e5e7eb; --brand:#4f46e5; --soft:#eef2ff; --warn:#fef3c7; --bg:#ffffff; --code:#f3f4f6; }
+	@media (prefers-color-scheme: dark) { :root { --ink:#e5e7eb; --muted:#9ca3af; --line:#374151; --brand:#a5b4fc; --soft:#1e1b4b; --warn:#3b2f0b; --bg:#0b1020; --code:#1f2937; } }
+	* { box-sizing: border-box; }
+	body { margin:0; font:16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color:var(--ink); background:var(--bg); }
+	.layout { display:grid; grid-template-columns:250px 1fr; max-width:1200px; margin:0 auto; }
+	nav { position:sticky; top:0; height:100vh; overflow:auto; padding:32px 20px; border-right:1px solid var(--line); font-size:14px; }
+	nav a { display:block; color:var(--muted); text-decoration:none; padding:4px 0; }
+	nav a:hover { color:var(--brand); }
+	nav strong { display:block; margin:16px 0 4px; font-size:12px; text-transform:uppercase; letter-spacing:.06em; color:var(--ink); }
+	main { padding:40px 48px 80px; min-width:0; }
+	h1 { font-size:32px; margin:0 0 6px; } h2 { font-size:22px; margin:48px 0 10px; padding-top:8px; border-top:1px solid var(--line); } h3 { font-size:17px; margin:24px 0 6px; }
+	.lead { color:var(--muted); font-size:18px; }
+	code, kbd { background:var(--code); padding:1px 6px; border-radius:4px; font-size:.9em; }
+	pre { background:var(--code); padding:14px 16px; border-radius:8px; overflow:auto; font-size:13px; }
+	.tip { background:var(--soft); border-left:4px solid var(--brand); padding:12px 16px; border-radius:6px; margin:16px 0; }
+	.warn { background:var(--warn); border-left:4px solid #d97706; padding:12px 16px; border-radius:6px; margin:16px 0; }
+	table { border-collapse:collapse; width:100%; font-size:14px; } th, td { text-align:left; border-bottom:1px solid var(--line); padding:8px 10px; vertical-align:top; }
+	img { max-width:100%; border:1px solid var(--line); border-radius:8px; }
+	@media (max-width: 820px) { .layout { grid-template-columns:1fr; } nav { position:static; height:auto; border-right:0; border-bottom:1px solid var(--line); } main { padding:24px 16px 60px; } table { display:block; overflow-x:auto; } }
+</style>
+</head>
+<body>
+<div class="layout">
+<nav aria-label="Contents">
+	<strong>Getting started</strong>
+	<a href="#install">Installation</a>
+	<a href="#quick-start">Quick start</a>
+	<a href="#api-key">Gemini API key</a>
+	<a href="#concepts">How shared stock works</a>
+	<strong>Features</strong>
+	<a href="#pools">Pools &amp; links</a>
+	<a href="#deduction">Orders, refunds, edits</a>
+	<a href="#sync">Product stock sync &amp; cart check</a>
+	<a href="#bundles">Bundles &amp; composites</a>
+	<a href="#alerts">Alerts &amp; anomalies</a>
+	<a href="#history">History, CSV import/export</a>
+	<a href="#forecast">Forecasts &amp; reorders</a>
+	<a href="#po">Purchase orders</a>
+	<a href="#setup">Set up pools for me</a>
+	<a href="#ask">Ask your inventory</a>
+	<a href="#settings">Settings</a>
+	<strong>Developers</strong>
+	<a href="#hooks">Hooks</a>
+	<a href="#rest">REST API</a>
+	<a href="#privacy">Privacy</a>
+	<strong>Help</strong>
+	<a href="#faq">FAQ</a>
+	<a href="#changelog">Changelog</a>
+</nav>
+<main>
+<h1>DEV3 AI Shared Stock &amp; Inventory for WooCommerce</h1>
+<p class="lead">One physical stock, many products. Pools, variable deduction, attribute rules, alerts, history and CSV, plus DEV3 AI forecasts, purchase-order drafts, pool setup and inventory chat.</p>
+<img src="screenshots/01-dashboard.png" alt="Dashboard with pools sorted by days of stock left">
+
+<h2 id="install">Installation</h2>
+<ol>
+	<li>WordPress 6.0+, PHP 7.4+ (tested on 8.3), WooCommerce 8.0+.</li>
+	<li>Plugins &gt; Add New &gt; Upload Plugin, choose <code>dev3-ai-shared-stock-for-woocommerce.zip</code>, Install, Activate.</li>
+	<li>WooCommerce &gt; Settings &gt; Products &gt; Inventory: turn on <strong>Enable stock management</strong>. WooCommerce only reduces stock for orders when this is on.</li>
+	<li>Open <strong>DEV3 Shared Stock</strong> in the admin menu.</li>
+</ol>
+<p>The plugin declares compatibility with High-Performance Order Storage (HPOS) and the Cart &amp; Checkout blocks. Shop managers (<code>manage_woocommerce</code>) can use the inventory screens; API Config and Settings need an administrator.</p>
+
+<h2 id="quick-start">Quick start</h2>
+<ol>
+	<li><strong>Stock pools &gt; New pool</strong>: name "Cola cans", unit "cans", opening stock 480, low-stock threshold 48.</li>
+	<li>On the pool page, <strong>Add link</strong>: "Cola can" with 1 unit per sale, "Cola 6-pack" with 6, "Cola case of 24" with 24.</li>
+	<li>Each product now shows the shared stock: the can 480, the 6-pack 80, the case 20. Sell any of them and all three update.</li>
+	<li>Or use <strong>Set up pools for me</strong> and accept the proposals.</li>
+</ol>
+
+<h2 id="api-key">Gemini API key setup</h2>
+<ol>
+	<li>Go to <a href="https://aistudio.google.com/apikey">Google AI Studio</a>, sign in and click <em>Create API key</em>.</li>
+	<li>In WordPress open <strong>DEV3 Shared Stock &gt; API Config</strong>, paste the key, click <em>Validate</em>, then <em>Save</em>.</li>
+	<li>Optional: set a monthly AI budget (USD). When it is reached, DEV3 AI pauses and every feature falls back to its non-AI version.</li>
+</ol>
+<div class="tip">You can also define the key in <code>wp-config.php</code>: <code>define( 'DEV3SS_GEMINI_API_KEY', '…' );</code>. The key is stored encrypted and is never sent to the browser.</div>
+
+<h2 id="concepts">How shared stock works</h2>
+<p>A <strong>pool</strong> holds physical units. A <strong>link</strong> says how many pool units one sale of an item uses. Links can point at:</p>
+<table>
+	<tr><th>Link</th><th>Example</th><th>Applies to</th></tr>
+	<tr><td>Simple product</td><td>Cola 6-pack uses 6 cans</td><td>That product</td></tr>
+	<tr><td>Variable product</td><td>Crew tee uses 1 blank tee</td><td>Every variation</td></tr>
+	<tr><td>Variation</td><td>Red tee also uses 1 red print</td><td>That variation</td></tr>
+	<tr><td>Attribute rule (store-wide)</td><td>Material = Linen uses 0.5 m linen</td><td>Every product or variation with that value</td></tr>
+	<tr><td>Attribute rule (one product)</td><td>Tee with Size = XL uses 1.2 blanks</td><td>That product's matching variations</td></tr>
+</table>
+<p>All matching links apply, so an item linked to two pools (a <strong>kit</strong>) deducts from both. When several links point to the same pool, the most specific wins: variation &gt; product &gt; product attribute rule &gt; store-wide attribute rule.</p>
+
+<h2 id="pools">Pools &amp; links</h2>
+<p>Each pool has a name, optional SKU (used by CSV import), unit, low-stock threshold, backorders switch, status (paused pools are ignored by orders and carts), supplier name and email, lead time and unit cost. Adjust stock with <em>Add</em>, <em>Remove</em> or <em>Set to</em>; every change is logged with an optional note.</p>
+<p>You can also link from the product editor: the <strong>Shared stock</strong> tab (simple and variable products) and the fields on each variation.</p>
+<img src="screenshots/02-pool.png" alt="Pool page with forecast, reorder card and links">
+
+<h2 id="deduction">Orders, refunds, cancellations and edits</h2>
+<ul>
+	<li>When WooCommerce reduces an order's stock (processing, on-hold, completed, payment complete) each line deducts <code>quantity × units per sale</code> from its pools.</li>
+	<li>Cancelled, failed-to-pending or back-to-pending orders give the units back.</li>
+	<li>Refunds with <em>Restock refunded items</em> return the refunded quantity (partial refunds work, the total never exceeds what was ordered).</li>
+	<li>Editing quantities, adding or deleting lines on an order that holds stock moves the difference.</li>
+	<li>Each order line stores the pools and units it used, so changing a link later never changes what an old order returns. Every hook is idempotent.</li>
+	<li>An order note lists the pool changes ("Shared stock updated: Cola cans −12 (468 cans)").</li>
+</ul>
+<p>The test suite covers 36 scenarios, run on both legacy order storage and HPOS.</p>
+
+<h2 id="sync">Product stock sync &amp; cart check</h2>
+<p>Linked products get <em>Manage stock</em> on and a quantity of <code>floor(pool stock ÷ units per sale)</code>, the lowest across their pools. Pools that allow backorders set the product to "Allow, but notify customer". This keeps the storefront stock text, the quantity selector, product feeds, the REST API and the block checkout correct.</p>
+<p>The whole-cart check adds up what the cart needs from each pool, so a 6-pack and 5 single cans cannot oversell a pool of 10. It runs on add to cart, cart updates, the cart page and checkout, and in the Store API used by the Cart and Checkout blocks. Shoppers see neutral messages such as "Sorry, only 4 more of "Cola can" can be added to your cart."</p>
+
+<h2 id="bundles">Bundles &amp; composite products</h2>
+<p>WooCommerce Product Bundles, Composite Products and Mix and Match add the container and each bundled item as order lines. Each line is resolved on its own. Under <strong>Settings &gt; Bundles and composite products</strong> choose: both (default, whatever is linked), only the bundled items, or only the bundle itself. A product linked to several pools works as a built-in kit without any bundle plugin.</p>
+
+<h2 id="alerts">Alerts &amp; anomalies</h2>
+<ul>
+	<li><strong>Low stock</strong> and <strong>out of stock</strong> alerts when a pool crosses its threshold or zero, with an email to the recipients in Settings. They close when stock recovers.</li>
+	<li><strong>Forecast</strong> alerts when a pool will run out before a new delivery could arrive (days left ≤ lead time).</li>
+	<li><strong>Anomalies</strong>: manual or imported changes that look like typos (an extra or missing zero, swapped digits, below zero without backorders, unusually large removals or additions) and sudden one-day drops far above normal (daily scan; sensitivity in Settings).</li>
+	<li>A suggested correction is shown as a draft: <em>Accept</em>, <em>Edit</em> or <em>Reject</em>. <strong>Explain with DEV3 AI</strong> adds the likely cause and, when the data points to a typo, a suggested stock level.</li>
+</ul>
+<img src="screenshots/03-alerts.png" alt="Alerts with a suggested fix">
+
+<h2 id="history">Stock history, CSV import &amp; export</h2>
+<p><strong>Stock history</strong> lists every change with reason (order, refund, cancelled order, order edited, manual, CSV import, restock, opening stock), order number, product and note. Filter by pool, reason and dates; export to CSV.</p>
+<p><strong>Import / export</strong>:</p>
+<table>
+	<tr><th>File</th><th>Columns</th></tr>
+	<tr><td>Pools</td><td><code>id, name, sku, stock, unit, low_threshold, backorders, status, supplier_name, supplier_email, lead_time_days, unit_cost, notes</code> (rows match by id, then SKU; others are created)</td></tr>
+	<tr><td>Links</td><td><code>pool_id</code> or <code>pool_sku</code>, <code>product_id</code> or <code>product_sku</code>, <code>attribute</code>, <code>value</code>, <code>qty</code></td></tr>
+	<tr><td>History</td><td>export only</td></tr>
+</table>
+<p>Imports always show a preview first. Comma and semicolon files are accepted, up to 5,000 rows. Exports guard against spreadsheet formula injection.</p>
+
+<h2 id="forecast">Forecasts &amp; reorder suggestions</h2>
+<p>Statistics first, from the stock history (net of cancellations and refunds):</p>
+<ul>
+	<li>Daily rate = 50% exponentially weighted average + 30% last two weeks + 20% long-run mean.</li>
+	<li>Trend (last period vs the one before), weekday pattern, standard deviation.</li>
+	<li>Safety stock = the larger of 1.65 × σ × √lead time (≈95% service level) and rate × safety days.</li>
+	<li>Reorder point = rate × lead time + safety stock; reorder date = when stock (plus open purchase orders) reaches it.</li>
+	<li>Suggested quantity covers lead time + "reorder covers" days plus the safety stock.</li>
+</ul>
+<p>Every forecast comes with a plain-words explanation. <strong>Explain with DEV3 AI</strong> adds a short summary, a risk level and tips, written only from these numbers. Forecasts refresh daily (statistics only) and on <strong>Recalculate all</strong>, which runs as a background job with progress (optionally asking DEV3 AI to explain the pools that need a reorder).</p>
+
+<h2 id="po">Purchase orders</h2>
+<ol>
+	<li>On a pool, check the quantity and date, then <strong>Draft PO email with DEV3 AI</strong> or <strong>Use template</strong>.</li>
+	<li>Review the subject and email; edit, regenerate or reject. <strong>Save as draft PO</strong> stores it.</li>
+	<li><strong>Email to supplier</strong> sends it with <code>wp_mail</code> (Reply-To = site admin email).</li>
+	<li>When the delivery arrives, <strong>Receive</strong> adds the received quantity to the pool (logged as "Restock").</li>
+</ol>
+<p>Sent purchase orders count as incoming stock in forecasts.</p>
+
+<h2 id="setup">Set up pools for me</h2>
+<p>Built-in rules spot pack sizes in product names ("6-pack", "Case of 24", "x12"), pack-size variations and material/fabric attributes shared by several products. <strong>Propose pools with DEV3 AI</strong> reads up to 250 products with their variations and attributes and proposes pools with links and opening stock. Proposals are drafts: tick the ones you want, edit names, stock and units per sale, then <strong>Create</strong>. Unknown product ids or attributes returned by AI are dropped.</p>
+<img src="screenshots/04-setup.png" alt="Pool proposals">
+
+<h2 id="ask">Ask your inventory</h2>
+<p>Ask in plain words: "What will run out before Black Friday?", "What should I reorder this week?", "Which pools sell fastest?". DEV3 AI answers from a snapshot of your pools, sales pace, forecasts, open purchase orders and upcoming retail dates (Black Friday, Cyber Monday, Christmas, New Year, Valentine's Day, Mother's Day, back to school). Without AI, built-in answers handle dates, reorders, best and slow sellers, and low stock.</p>
+<img src="screenshots/05-ask.png" alt="Ask your inventory">
+
+<h2 id="settings">Settings</h2>
+<table>
+	<tr><th>Setting</th><th>Default</th><th>What it does</th></tr>
+	<tr><td>Deduct pool stock for orders</td><td>On</td><td>Master switch for all deduction.</td></tr>
+	<tr><td>Keep product stock in sync</td><td>On</td><td>Writes pool availability into linked products.</td></tr>
+	<tr><td>Check the whole cart</td><td>On</td><td>Cart guard for classic and block carts.</td></tr>
+	<tr><td>Bundles and composite products</td><td>Both</td><td>Which bundle lines deduct.</td></tr>
+	<tr><td>Default threshold / lead time</td><td>5 / 7 days</td><td>Used for new pools.</td></tr>
+	<tr><td>Email alerts, recipients</td><td>On, admin email</td><td>Low and out-of-stock emails.</td></tr>
+	<tr><td>Detect anomalies, sensitivity</td><td>On, medium</td><td>Typos and sudden drops.</td></tr>
+	<tr><td>History window, safety days, reorder covers</td><td>90, 7, 30</td><td>Forecast inputs.</td></tr>
+	<tr><td>DEV3 AI features</td><td>All on</td><td>Toggle each AI feature; the non-AI version stays available.</td></tr>
+	<tr><td>Company name, email signature</td><td>Site title</td><td>Used in purchase orders.</td></tr>
+</table>
+<p>API Config holds the key, models (default <code>gemini-2.5-flash</code>, pro <code>gemini-2.5-pro</code>), the monthly budget, the AI on/off switch, caching and PII masking. Usage Logs show requests, tokens and estimated cost per feature.</p>
+
+<h2 id="hooks">Hooks</h2>
+<table>
+	<tr><th>Hook</th><th>Type</th><th>Use</th></tr>
+	<tr><td><code>dev3ss_stock_changed( $pool_id, $delta, $after, $reason, $ctx )</code></td><td>action</td><td>After every pool change.</td></tr>
+	<tr><td><code>dev3ss_pool_created( $id )</code>, <code>dev3ss_pool_deleted( $id, $products )</code></td><td>action</td><td>Pool lifecycle.</td></tr>
+	<tr><td><code>dev3ss_pool_links_changed( $pool_id )</code>, <code>dev3ss_link_deleted( $link, $products )</code></td><td>action</td><td>Links changed (products are re-synced).</td></tr>
+	<tr><td><code>dev3ss_alert_raised( $id, $alert )</code></td><td>action</td><td>Send alerts to Slack etc.</td></tr>
+	<tr><td><code>dev3ss_resolve_links( $pools, $product_id, $variation_id, $attrs )</code></td><td>filter</td><td>Change which pools an item uses.</td></tr>
+	<tr><td><code>dev3ss_sync_order( $sync, $order, $active )</code></td><td>filter</td><td>Skip pool sync for some orders.</td></tr>
+	<tr><td><code>dev3ss_skip_bundle_role( $skip, $role, $mode )</code></td><td>filter</td><td>Custom bundle handling.</td></tr>
+	<tr><td><code>dev3ss_mirror_quantity( $qty, $product, $links )</code></td><td>filter</td><td>Adjust the stock written to a product.</td></tr>
+	<tr><td><code>dev3ss_forecast( $forecast, $pool )</code></td><td>filter</td><td>Adjust forecasts.</td></tr>
+	<tr><td><code>dev3ss_alert_email( $mail, $pool, $type )</code>, <code>dev3ss_po_email( $mail, $po )</code></td><td>filter</td><td>Change emails (return false to skip alerts).</td></tr>
+	<tr><td><code>dev3ss_inventory_capability</code></td><td>filter</td><td>Who can manage stock (default <code>manage_woocommerce</code>).</td></tr>
+	<tr><td><code>dev3ss_prompt_&lt;id&gt;</code></td><td>filter</td><td>Override prompts: <code>forecast_explain</code>, <code>po_email</code>, <code>setup_pools</code>, <code>anomaly_explain</code>, <code>ask_inventory</code>.</td></tr>
+</table>
+
+<h2 id="rest">REST API</h2>
+<p>Namespace <code>dev3ss/v1</code>; every route needs a logged-in user with the inventory capability and a <code>X-WP-Nonce</code> header.</p>
+<pre>GET    dashboard
+GET    pools                      POST pools
+GET    pools/{id}                 PUT pools/{id}       DELETE pools/{id}
+POST   pools/{id}/adjust          { mode: add|remove|set, qty, note }
+POST   pools/{id}/links           { product_id, attr_key, attr_value, qty }
+DELETE links/{id}
+POST   pools/{id}/sync | forecast | explain | po-draft
+GET    products/search?q=         GET attributes
+GET    history?pool_id=&amp;reason=&amp;from=&amp;to=&amp;page=
+GET    export?type=pools|links|history
+POST   import                     { type, csv, dry_run }
+GET    forecasts                  POST forecasts/run { explain }
+GET    purchase-orders            POST purchase-orders   PUT purchase-orders/{id}
+POST   purchase-orders/{id}/send | receive | cancel
+GET    alerts?status=             POST alerts/scan
+POST   alerts/{id}/dismiss | reopen | explain | fix { stock }
+POST   setup/suggest { ai }       POST setup/apply { proposals }
+POST   ask { question, history, ai }</pre>
+
+<h2 id="privacy">Privacy</h2>
+<p>DEV3 AI sends only inventory data (pool names, quantities, sales statistics, product names and attributes) to Google Gemini, and only when you use an AI feature. No customer data is sent. A privacy-policy snippet naming Google Gemini is added under Settings &gt; Privacy, and the usage log supports the WordPress personal-data exporter and eraser.</p>
+
+<h2 id="faq">FAQ</h2>
+<h3>Orders do not change my pools.</h3>
+<p>Check that WooCommerce stock management is on and "Deduct pool stock for orders" is on. Paused pools are ignored.</p>
+<h3>I edited a product's stock by hand and it changed back.</h3>
+<p>Linked products follow their pool. Adjust the pool instead, or turn off "Keep product stock in sync".</p>
+<h3>Can a product use more than one pool?</h3>
+<p>Yes. Link it to each pool; it sells only while every pool has enough.</p>
+<h3>What if a pool is deleted?</h3>
+<p>Its links and alerts are removed; history is kept; product stock stays where it was. Orders that used it simply skip it on refund or cancel.</p>
+<h3>Does it work without an API key?</h3>
+<p>Yes. Everything except the AI explanations, AI email drafts, AI proposals and free-form chat works without a key, and each has a non-AI alternative.</p>
+<h3>Multisite?</h3>
+<p>Yes, activate per site. Each site has its own pools.</p>
+
+<h2 id="changelog">Changelog</h2>
+<h3>1.0.0</h3>
+<ul><li>Initial release.</li></ul>
+</main>
+</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+/* Kit first, then Tailwind, so prefixed utilities can override kit styles. */
+@import "./ui/ui.css";
+@import "./tailwind.css";
+
+/* Legacy helpers (pre-kit plugin UIs use these; new code uses the ui/ kit). */
+
+#dev3ss-admin-root { max-width: 1100px; margin-top: 16px; }
+.dev3ss-root .dev3ss-admin-nav { display: flex; gap: 2px; border-bottom: 1px solid #dcdcde; margin-bottom: 20px; flex-wrap: wrap; }
+.dev3ss-root .dev3ss-admin-nav a { padding: 10px 16px; text-decoration: none; color: #50575e; font-weight: 500; border-bottom: 2px solid transparent; margin-bottom: -1px; box-shadow: none; }
+.dev3ss-root .dev3ss-admin-nav a.is-active { color: #4f46e5; border-bottom-color: #4f46e5; }
+.dev3ss-root .dev3ss-card { background: #fff; border: 1px solid #dcdcde; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px; }
+.dev3ss-root .dev3ss-card h2 { margin: 0 0 4px; font-size: 16px; }
+.dev3ss-root .dev3ss-card > p.description { margin: 0 0 16px; }
+.dev3ss-root .dev3ss-stat { background: #fff; border: 1px solid #dcdcde; border-radius: 8px; padding: 14px 16px; }
+.dev3ss-root .dev3ss-stat strong { display: block; font-size: 22px; line-height: 1.2; color: #1d2327; }
+.dev3ss-root .dev3ss-stat span { color: #646970; font-size: 12px; }
+.dev3ss-root .dev3ss-bars { display: flex; align-items: flex-end; gap: 3px; height: 120px; padding-top: 8px; }
+.dev3ss-root .dev3ss-bars > div { flex: 1; background: #6366f1; border-radius: 3px 3px 0 0; min-height: 2px; opacity: .85; }
+.dev3ss-root .dev3ss-bars > div:hover { opacity: 1; }
+.dev3ss-root .dev3ss-badge { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+.dev3ss-root .dev3ss-badge.is-ok { background: #dcfce7; color: #166534; }
+.dev3ss-root .dev3ss-badge.is-warn { background: #fef3c7; color: #92400e; }
+.dev3ss-root .dev3ss-badge.is-bad { background: #fee2e2; color: #991b1b; }
+.dev3ss-root table.widefat td, .dev3ss-root table.widefat th { vertical-align: middle; }

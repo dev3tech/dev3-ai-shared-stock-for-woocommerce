@@ -1,0 +1,1611 @@
+# Copyright (C) 2026 DEV3 Technologies
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: DEV3 AI Shared Stock & Inventory for WooCommerce 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/dev3-ai-shared-stock-for-woocommerce\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-10-24T23:14:04+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: dev3-ai-shared-stock-for-woocommerce\n"
+
+#. Plugin Name of the plugin
+#: dev3-ai-shared-stock-for-woocommerce.php
+msgid "DEV3 AI Shared Stock & Inventory for WooCommerce"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: dev3-ai-shared-stock-for-woocommerce.php
+msgid "https://dev3.tech/item/dev3-ai-shared-stock-for-woocommerce"
+msgstr ""
+
+#. Description of the plugin
+#: dev3-ai-shared-stock-for-woocommerce.php
+msgid "Shared stock pools, variable deduction, attribute stock rules and AI stockout forecasts for WooCommerce."
+msgstr ""
+
+#. Author of the plugin
+#: dev3-ai-shared-stock-for-woocommerce.php
+msgid "DEV3 Technologies"
+msgstr ""
+
+#. Author URI of the plugin
+#: dev3-ai-shared-stock-for-woocommerce.php
+msgid "https://dev3.tech"
+msgstr ""
+
+#: includes/Admin/Admin_Page.php:41
+msgid "DEV3 Shared Stock"
+msgstr ""
+
+#: includes/Admin/Admin_Page.php:89
+msgid "Settings"
+msgstr ""
+
+#: includes/Admin/Product_Panel.php:42
+msgid "Shared stock"
+msgstr ""
+
+#: includes/Admin/Product_Panel.php:56
+msgid "Not pooled"
+msgstr ""
+
+#: includes/Admin/Product_Panel.php:92
+msgid "This product is a kit: it draws from several pools."
+msgstr ""
+
+#: includes/Admin/Product_Panel.php:93
+msgid "Edit kits in DEV3 AI Shared Stock"
+msgstr ""
+
+#: includes/Admin/Product_Panel.php:98
+#: includes/Admin/Product_Panel.php:217
+msgid "Shared stock pool"
+msgstr ""
+
+#: includes/Admin/Product_Panel.php:102
+msgid "Sales of this product deduct from the pool. For variable products this applies to every variation unless a variation picks its own pool."
+msgstr ""
+
+#: includes/Admin/Product_Panel.php:108
+#: includes/Admin/Product_Panel.php:227
+msgid "Units per sale"
+msgstr ""
+
+#: includes/Admin/Product_Panel.php:116
+msgid "How many pool units one sale uses, e.g. 6 for a 6-pack."
+msgstr ""
+
+#: includes/Admin/Product_Panel.php:124
+msgid "Stock comes from"
+msgstr ""
+
+#. translators: 1: pool, 2: units per sale, 3: unit, 4: stock
+#: includes/Admin/Product_Panel.php:129
+#, php-format
+msgid "%1$s: %2$s %3$s per sale (%4$s in stock)"
+msgstr ""
+
+#: includes/Admin/Product_Panel.php:132
+msgid "The stock quantity of this product is kept in sync with its pools."
+msgstr ""
+
+#: includes/Admin/Product_Panel.php:134
+msgid "Open DEV3 AI Shared Stock"
+msgstr ""
+
+#: includes/Admin/Product_Panel.php:209
+msgid "This variation draws from several pools (kit). Edit it in DEV3 AI Shared Stock."
+msgstr ""
+
+#: includes/Core3/Api/Ai.php:212
+msgid "Unsupported image type."
+msgstr ""
+
+#: includes/Core3/Api/Ai.php:216
+msgid "The image data is invalid."
+msgstr ""
+
+#: includes/Core3/Api/Ai.php:292
+msgid "AI features are turned off."
+msgstr ""
+
+#: includes/Core3/Api/Ai.php:292
+msgid "Turn AI back on in API Config."
+msgstr ""
+
+#: includes/Core3/Api/Ai.php:294
+msgid "Storefront AI is turned off."
+msgstr ""
+
+#: includes/Core3/Api/Ai.php:294
+msgid "Turn storefront AI back on in API Config."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:49
+msgid "No Gemini API key is configured."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:50
+msgid "Open the plugin settings → API Config and paste a key from Google AI Studio."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:63
+msgid "AI paused: the monthly AI budget is reached."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:64
+msgid "Raise the monthly cap in API Config, or wait until the budget resets on the 1st of next month."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:80
+msgid "The AI service took too long to respond."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:81
+msgid "Try again, shorten the prompt, lower Max Output Tokens, or switch to the faster model."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:89
+msgid "Your server could not reach the AI service (Google Gemini API)."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:90
+msgid "Check the server's internet connection or firewall (outbound HTTPS to generativelanguage.googleapis.com)."
+msgstr ""
+
+#. translators: %s: transport error message.
+#: includes/Core3/Api/Api_Error.php:98
+#, php-format
+msgid "Request to the AI service failed: %s"
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:99
+#: includes/Core3/Api/Gemini_Client.php:250
+#: includes/Core3/Api/Gemini_Client.php:422
+msgid "Try again in a moment."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:128
+msgid "The Gemini API key is not valid."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:129
+msgid "Create a new key in Google AI Studio and paste it in API Config."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:137
+msgid "Your Gemini quota is exhausted."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:137
+msgid "AI rate limit reached."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:139
+msgid "Wait for the quota to reset, enable billing on your Google Cloud project, or switch to a model with remaining quota."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:140
+msgid "Wait a few seconds and try again."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:148
+msgid "This API key is not allowed to use Gemini."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:149
+msgid "Enable the Generative Language API for the key's project, and check any key restrictions (HTTP referrer / IP)."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:156
+msgid "The selected Gemini model is not available."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:157
+msgid "Pick another model in API Config — click \"Refresh models\" to load the ones your key can use."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:164
+msgid "The AI service is not available in your server's region."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:165
+msgid "Host the site in a supported region or use a key from a supported project."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:172
+msgid "The AI service is temporarily unavailable."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:173
+msgid "This is on Google's side. Try again shortly or switch models."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:180
+msgid "The AI service rejected the request."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:181
+msgid "Adjust the prompt or settings and try again."
+msgstr ""
+
+#: includes/Core3/Api/Gemini_Client.php:250
+msgid "The AI returned an incomplete embedding batch."
+msgstr ""
+
+#: includes/Core3/Api/Gemini_Client.php:368
+msgid "The AI blocked this image request for safety reasons."
+msgstr ""
+
+#: includes/Core3/Api/Gemini_Client.php:368
+msgid "The AI did not return an image."
+msgstr ""
+
+#: includes/Core3/Api/Gemini_Client.php:369
+#: includes/Core3/Api/Gemini_Client.php:472
+#: includes/Core3/Api/Gemini_Client.php:508
+msgid "Rephrase the prompt and try again."
+msgstr ""
+
+#: includes/Core3/Api/Gemini_Client.php:369
+msgid "Try again, or describe the image more concretely."
+msgstr ""
+
+#: includes/Core3/Api/Gemini_Client.php:421
+msgid "The AI returned malformed data."
+msgstr ""
+
+#: includes/Core3/Api/Gemini_Client.php:471
+msgid "The AI blocked this request for safety reasons."
+msgstr ""
+
+#: includes/Core3/Api/Gemini_Client.php:507
+msgid "The AI stopped because the response was flagged."
+msgstr ""
+
+#: includes/Core3/Api/Gemini_Client.php:515
+msgid "The AI ran out of output tokens before writing an answer."
+msgstr ""
+
+#: includes/Core3/Api/Gemini_Client.php:516
+msgid "Increase Max Output Tokens in API Config, or set Reasoning to \"Low\"."
+msgstr ""
+
+#: includes/Core3/Api/Gemini_Client.php:523
+msgid "The AI returned an empty response."
+msgstr ""
+
+#: includes/Core3/Api/Gemini_Client.php:524
+msgid "Try again or rephrase the prompt."
+msgstr ""
+
+#: includes/Core3/Api/Prompts.php:124
+msgid "Unknown prompt template."
+msgstr ""
+
+#: includes/Core3/Core/Jobs.php:90
+msgid "Unknown job type."
+msgstr ""
+
+#: includes/Core3/Core/Jobs.php:116
+msgid "The job could not be saved."
+msgstr ""
+
+#: includes/Core3/Core/Jobs.php:238
+#: build/admin.js:1
+msgid "Failed"
+msgstr ""
+
+#: includes/Core3/Core/Jobs.php:339
+#: includes/Core3/Rest/Core_Controller.php:112
+msgid "Job not found."
+msgstr ""
+
+#: includes/Core3/Core/Privacy.php:33
+#: includes/Core3/Core/Privacy.php:34
+#: includes/Core3/Core/Privacy.php:165
+msgid "AI usage log"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: includes/Core3/Core/Privacy.php:85
+#, php-format
+msgid "This site uses %s, which sends the content needed for AI features (for example product details, reviews or form text) to Google Gemini, operated by Google LLC, as a data processor. Only the fields needed for the requested feature are sent. Google's terms and privacy policy apply: https://ai.google.dev/gemini-api/terms"
+msgstr ""
+
+#: includes/Core3/Core/Privacy.php:87
+msgid "The plugin keeps a usage log (time, feature, token counts and the user account that triggered the request) to show AI usage and costs to administrators. It does not store the prompts."
+msgstr ""
+
+#: includes/Core3/Core/Privacy.php:169
+msgid "Feature"
+msgstr ""
+
+#: includes/Core3/Core/Privacy.php:173
+#: build/admin.js:1
+msgid "Model"
+msgstr ""
+
+#: includes/Core3/Core/Privacy.php:177
+#: build/admin.js:1
+msgid "Tokens"
+msgstr ""
+
+#: includes/Core3/Core/Privacy.php:181
+msgid "Date"
+msgstr ""
+
+#: includes/Core3/Data/Usage_Repository.php:194
+msgid "Deleted user"
+msgstr ""
+
+#: includes/Core3/Rest/Base_Controller.php:72
+msgid "Your session has expired. Reload the editor and try again."
+msgstr ""
+
+#: includes/Core3/Rest/Base_Controller.php:75
+#: includes/Core3/Rest/Core_Controller.php:115
+#: includes/Rest/Rest_Controller.php:58
+msgid "You do not have permission to do that."
+msgstr ""
+
+#: includes/Core3/Rest/Base_Controller.php:94
+msgid "Cross-origin requests are not allowed."
+msgstr ""
+
+#: includes/Core3/Rest/Base_Controller.php:104
+msgid "Too many requests. Please wait a moment."
+msgstr ""
+
+#: includes/Csv/Csv.php:70
+msgid "The CSV file is empty."
+msgstr ""
+
+#: includes/Csv/Csv.php:123
+msgid "The CSV needs a header row and at least one data row."
+msgstr ""
+
+#. translators: %d: max rows
+#: includes/Csv/Csv.php:127
+#, php-format
+msgid "Import up to %d rows at a time."
+msgstr ""
+
+#: includes/Csv/Csv.php:217
+msgid "The pools CSV needs a \"name\" or \"sku\" column."
+msgstr ""
+
+#. translators: %d: line
+#: includes/Csv/Csv.php:247
+#, php-format
+msgid "Line %d: stock is not a number."
+msgstr ""
+
+#. translators: 1: line, 2: error
+#: includes/Csv/Csv.php:255
+#: includes/Csv/Csv.php:281
+#: includes/Csv/Csv.php:358
+#, php-format
+msgid "Line %1$d: %2$s"
+msgstr ""
+
+#: includes/Csv/Csv.php:274
+msgid "CSV import"
+msgstr ""
+
+#. translators: 1: line, 2: sku
+#: includes/Csv/Csv.php:321
+#, php-format
+msgid "Line %1$d: no product with SKU %2$s."
+msgstr ""
+
+#. translators: %d: line
+#: includes/Csv/Csv.php:328
+#, php-format
+msgid "Line %d: pool not found (use pool_id or pool_sku)."
+msgstr ""
+
+#. translators: %d: line
+#: includes/Csv/Csv.php:340
+#, php-format
+msgid "Line %d: needs a product or an attribute + value, and a quantity above 0."
+msgstr ""
+
+#: includes/Data/Pools.php:194
+msgid "Give the pool a name."
+msgstr ""
+
+#: includes/Data/Pools.php:203
+msgid "Another pool already uses this SKU."
+msgstr ""
+
+#: includes/Data/Pools.php:231
+msgid "Enter a valid supplier email."
+msgstr ""
+
+#: includes/Data/Pools.php:277
+msgid "Could not save the pool."
+msgstr ""
+
+#: includes/Data/Pools.php:283
+msgid "Opening stock"
+msgstr ""
+
+#: includes/Data/Pools.php:430
+msgid "That stock pool no longer exists."
+msgstr ""
+
+#: includes/Data/Pools.php:501
+msgid "The quantity per sale must be more than 0."
+msgstr ""
+
+#: includes/Data/Pools.php:504
+msgid "Pick a product, a variation or an attribute value."
+msgstr ""
+
+#: includes/Data/Pools.php:507
+msgid "An attribute rule needs both the attribute and its value."
+msgstr ""
+
+#: includes/Data/Pools.php:510
+msgid "That product does not exist."
+msgstr ""
+
+#: includes/Data/Purchase_Orders.php:94
+#: includes/Data/Purchase_Orders.php:137
+msgid "Order quantity must be more than 0."
+msgstr ""
+
+#: includes/Data/Purchase_Orders.php:196
+msgid "Add a supplier email to the pool or the purchase order first."
+msgstr ""
+
+#: includes/Data/Purchase_Orders.php:199
+#: includes/Data/Purchase_Orders.php:245
+#: includes/Data/Purchase_Orders.php:287
+msgid "This purchase order is closed."
+msgstr ""
+
+#. translators: %s: pool name
+#: includes/Data/Purchase_Orders.php:211
+#, php-format
+msgid "Purchase order: %s"
+msgstr ""
+
+#: includes/Data/Purchase_Orders.php:218
+msgid "WordPress could not send the email. Check your site's mail setup."
+msgstr ""
+
+#: includes/Data/Purchase_Orders.php:249
+msgid "Received quantity must be more than 0."
+msgstr ""
+
+#. translators: %d: purchase order number
+#: includes/Data/Purchase_Orders.php:257
+#, php-format
+msgid "Purchase order #%d received"
+msgstr ""
+
+#: includes/Data/Purchase_Orders.php:318
+msgid "That purchase order no longer exists."
+msgstr ""
+
+#: includes/Insights/Ai_Features.php:189
+msgid "This DEV3 AI feature is turned off in Settings."
+msgstr ""
+
+#: includes/Insights/Ai_Features.php:189
+msgid "Turn it on under Settings > DEV3 AI features, or use the non-AI option."
+msgstr ""
+
+#. translators: %s: supplier name
+#: includes/Insights/Ai_Features.php:257
+#, php-format
+msgid "Hello %s,"
+msgstr ""
+
+#: includes/Insights/Ai_Features.php:258
+msgid "Hello,"
+msgstr ""
+
+#. translators: 1: company
+#: includes/Insights/Ai_Features.php:264
+#, php-format
+msgid "We would like to place the following order for %1$s:"
+msgstr ""
+
+#. translators: 1: item, 2: quantity, 3: unit
+#: includes/Insights/Ai_Features.php:267
+#, php-format
+msgid "- %1$s: %2$s %3$s"
+msgstr ""
+
+#. translators: %s: date
+#: includes/Insights/Ai_Features.php:271
+#, php-format
+msgid "- Needed by: %s"
+msgstr ""
+
+#. translators: %s: unit cost
+#: includes/Insights/Ai_Features.php:275
+#, php-format
+msgid "- Unit price on file: %s"
+msgstr ""
+
+#: includes/Insights/Ai_Features.php:278
+msgid "Please confirm the quantity, price and delivery date."
+msgstr ""
+
+#: includes/Insights/Ai_Features.php:280
+msgid "Thank you,"
+msgstr ""
+
+#. translators: 1: company, 2: item
+#: includes/Insights/Ai_Features.php:284
+#, php-format
+msgid "Purchase order from %1$s: %2$s"
+msgstr ""
+
+#: includes/Insights/Ai_Features.php:429
+#: includes/Rest/Rest_Controller.php:966
+msgid "That alert no longer exists."
+msgstr ""
+
+#: includes/Insights/Ai_Features.php:500
+msgid "What will run out before Black Friday?"
+msgstr ""
+
+#: includes/Insights/Ai_Features.php:501
+msgid "What should I reorder this week?"
+msgstr ""
+
+#: includes/Insights/Ai_Features.php:502
+msgid "Which pools sell fastest?"
+msgstr ""
+
+#. translators: 1: pool, 2: stock
+#: includes/Insights/Anomalies.php:115
+#, php-format
+msgid "%1$s went below zero (%2$s) but does not allow backorders."
+msgstr ""
+
+#. translators: 1: pool, 2: before, 3: after
+#: includes/Insights/Anomalies.php:118
+#, php-format
+msgid "%1$s was changed by hand from %2$s to %3$s. That looks like an extra zero."
+msgstr ""
+
+#. translators: 1: pool, 2: before, 3: after
+#: includes/Insights/Anomalies.php:121
+#, php-format
+msgid "%1$s was changed by hand from %2$s to %3$s. That looks like a missing zero."
+msgstr ""
+
+#. translators: 1: pool, 2: before, 3: after
+#: includes/Insights/Anomalies.php:124
+#, php-format
+msgid "%1$s was changed by hand from %2$s to %3$s. The digits look swapped."
+msgstr ""
+
+#. translators: 1: pool, 2: before, 3: after
+#: includes/Insights/Anomalies.php:127
+#, php-format
+msgid "A large manual removal on %1$s: %2$s to %3$s, far more than a normal week of sales."
+msgstr ""
+
+#. translators: 1: pool, 2: before, 3: after
+#: includes/Insights/Anomalies.php:130
+#, php-format
+msgid "An unusually large addition on %1$s: %2$s to %3$s, many months of sales at once."
+msgstr ""
+
+#. translators: 1: pool, 2: amount
+#: includes/Insights/Anomalies.php:133
+#, php-format
+msgid "Sudden stock drop on %1$s: %2$s used in one day, far above normal."
+msgstr ""
+
+#: includes/Insights/Ask.php:77
+msgid "Black Friday"
+msgstr ""
+
+#: includes/Insights/Ask.php:78
+msgid "Cyber Monday"
+msgstr ""
+
+#: includes/Insights/Ask.php:79
+msgid "Christmas"
+msgstr ""
+
+#: includes/Insights/Ask.php:80
+msgid "New Year"
+msgstr ""
+
+#: includes/Insights/Ask.php:81
+msgid "Valentine's Day"
+msgstr ""
+
+#: includes/Insights/Ask.php:82
+msgid "Mother's Day (US)"
+msgstr ""
+
+#: includes/Insights/Ask.php:83
+msgid "Back to school"
+msgstr ""
+
+#. translators: %d: days
+#: includes/Insights/Ask.php:137
+#, php-format
+msgid "the next %d day"
+msgid_plural "the next %d days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/Insights/Ask.php:141
+msgid "the next 7 days"
+msgstr ""
+
+#: includes/Insights/Ask.php:142
+msgid "the next 30 days"
+msgstr ""
+
+#: includes/Insights/Ask.php:143
+msgid "tomorrow"
+msgstr ""
+
+#: includes/Insights/Ask.php:144
+msgid "the weekend"
+msgstr ""
+
+#: includes/Insights/Ask.php:173
+msgid "now"
+msgstr ""
+
+#. translators: %s: date
+#: includes/Insights/Ask.php:176
+#, php-format
+msgid "by %s"
+msgstr ""
+
+#: includes/Insights/Ask.php:191
+msgid "You have no active stock pools yet. Create one, or use \"Set up pools for me\" to get started."
+msgstr ""
+
+#. translators: 1: event label, 2: date
+#: includes/Insights/Ask.php:209
+#, php-format
+msgid "Good news: at the current pace nothing runs out before %1$s (%2$s)."
+msgstr ""
+
+#. translators: %s: pool name
+#: includes/Insights/Ask.php:218
+#, php-format
+msgid "%s (already out of stock)"
+msgstr ""
+
+#. translators: 1: pool, 2: date, 3: qty, 4: unit, 5: reorder date
+#: includes/Insights/Ask.php:220
+#, php-format
+msgid "%1$s, around %2$s (reorder about %3$s %4$s %5$s)"
+msgstr ""
+
+#. translators: 1: count, 2: event, 3: date, 4: list
+#: includes/Insights/Ask.php:224
+#, php-format
+msgid "%1$d pool will run out before %2$s (%3$s): %4$s"
+msgid_plural "%1$d pools will run out before %2$s (%3$s): %4$s"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/Insights/Ask.php:240
+msgid "Nothing needs reordering in the next week."
+msgstr ""
+
+#. translators: 1: pool, 2: qty, 3: unit, 4: date
+#: includes/Insights/Ask.php:248
+#, php-format
+msgid "%1$s: about %2$s %3$s %4$s"
+msgstr ""
+
+#. translators: %s: list
+#: includes/Insights/Ask.php:252
+#, php-format
+msgid "Reorder these soon: %s"
+msgstr ""
+
+#. translators: 1: pool, 2: per day, 3: unit
+#: includes/Insights/Ask.php:269
+#, php-format
+msgid "%1$s (%2$s %3$s a day)"
+msgstr ""
+
+#. translators: %s: list
+#: includes/Insights/Ask.php:274
+#, php-format
+msgid "Your fastest-moving pools: %s."
+msgstr ""
+
+#: includes/Insights/Ask.php:275
+msgid "There are no sales in the forecast window yet."
+msgstr ""
+
+#. translators: %s: list
+#: includes/Insights/Ask.php:285
+#, php-format
+msgid "No sales lately for: %s. Consider a promotion or a smaller reorder."
+msgstr ""
+
+#: includes/Insights/Ask.php:286
+msgid "Every pool with stock has sold something recently."
+msgstr ""
+
+#. translators: %s: list
+#: includes/Insights/Ask.php:296
+#, php-format
+msgid "At or below the low-stock threshold: %s."
+msgstr ""
+
+#: includes/Insights/Ask.php:297
+msgid "No pool is below its low-stock threshold."
+msgstr ""
+
+#. translators: 1: pools, 2: reorder now, 3: soon, 4: first pool
+#: includes/Insights/Ask.php:316
+#, php-format
+msgid "You have %1$d active pools. %2$d need a reorder now and %3$d within a week. The first to run out is %4$s. Try asking \"what runs out before Black Friday?\" or \"what should I reorder?\"."
+msgstr ""
+
+#: includes/Insights/Forecast.php:215
+#: includes/Insights/Setup_Advisor.php:200
+#: includes/Insights/Setup_Advisor.php:238
+#: includes/Insights/Setup_Advisor.php:277
+msgid "units"
+msgstr ""
+
+#. translators: 1: days of history, 2: stock, 3: unit
+#: includes/Insights/Forecast.php:225
+#, php-format
+msgid "No sales in the last %1$d days, so there is no stockout in sight. %2$s %3$s are in stock."
+msgstr ""
+
+#. translators: 1: units per day, 2: unit, 3: days of history
+#: includes/Insights/Forecast.php:229
+#, php-format
+msgid "This pool uses about %1$s %2$s a day (based on the last %3$d days)."
+msgstr ""
+
+#. translators: 1: percent, 2: days
+#: includes/Insights/Forecast.php:233
+#, php-format
+msgid "Demand is rising: the last %2$d days were %1$s%% busier than the %2$d days before."
+msgstr ""
+
+#. translators: 1: percent, 2: days
+#: includes/Insights/Forecast.php:235
+#, php-format
+msgid "Demand is slowing: the last %2$d days were %1$s%% quieter than the %2$d days before."
+msgstr ""
+
+#: includes/Insights/Forecast.php:237
+msgid "Demand is steady."
+msgstr ""
+
+#. translators: 1: weekday, 2: percent
+#: includes/Insights/Forecast.php:243
+#, php-format
+msgid "%1$s is the busiest day (%2$s%% above average)."
+msgstr ""
+
+#: includes/Insights/Forecast.php:246
+msgid "It is out of stock now."
+msgstr ""
+
+#. translators: 1: stock, 2: unit, 3: days, 4: date
+#: includes/Insights/Forecast.php:249
+#, php-format
+msgid "At this pace the %1$s %2$s in stock last about %3$s days, until around %4$s."
+msgstr ""
+
+#. translators: 1: quantity, 2: unit
+#: includes/Insights/Forecast.php:253
+#, php-format
+msgid "%1$s %2$s are already on order."
+msgstr ""
+
+#. translators: 1: lead time days, 2: quantity, 3: unit, 4: cover days
+#: includes/Insights/Forecast.php:257
+#, php-format
+msgid "With a %1$d-day supplier lead time, reorder now: about %2$s %3$s covers the next %4$d days plus a safety buffer."
+msgstr ""
+
+#. translators: 1: lead time days, 2: date, 3: quantity, 4: unit, 5: cover days
+#: includes/Insights/Forecast.php:260
+#, php-format
+msgid "With a %1$d-day supplier lead time, reorder by %2$s: about %3$s %4$s covers the next %5$d days plus a safety buffer."
+msgstr ""
+
+#: includes/Insights/Forecast.php:263
+msgid "There is little sales history yet, so treat this as a rough guide."
+msgstr ""
+
+#. translators: 1: pool name, 2: days, 3: lead time
+#: includes/Insights/Forecast.php:354
+#, php-format
+msgid "%1$s will run out in about %2$s days, before a new delivery can arrive (lead time %3$d days)."
+msgstr ""
+
+#: includes/Insights/Forecast.php:377
+msgid "Pool not found"
+msgstr ""
+
+#. translators: %d: number of products
+#: includes/Insights/Setup_Advisor.php:203
+#, php-format
+msgid "%d products sell the same item in different pack sizes. Each pack deducts its size from one shared pool."
+msgstr ""
+
+#. translators: 1: product, 2: value
+#: includes/Insights/Setup_Advisor.php:228
+#, php-format
+msgid "%1$s – %2$s"
+msgstr ""
+
+#. translators: %s: attribute label
+#: includes/Insights/Setup_Advisor.php:241
+#, php-format
+msgid "The \"%s\" variations are pack sizes of one item, so they can share one pool."
+msgstr ""
+
+#. translators: 1: attribute label, 2: value
+#: includes/Insights/Setup_Advisor.php:276
+#, php-format
+msgid "%1$s: %2$s"
+msgstr ""
+
+#. translators: 1: count, 2: label
+#: includes/Insights/Setup_Advisor.php:280
+#, php-format
+msgid "%1$d products use the same %2$s. A store-wide attribute rule makes them all draw from one pool."
+msgstr ""
+
+#. translators: 1: attribute label, 2: value
+#. translators: 1: attribute, 2: value
+#: includes/Insights/Setup_Advisor.php:285
+#: includes/Insights/Setup_Advisor.php:354
+#, php-format
+msgid "Any product with %1$s = %2$s"
+msgstr ""
+
+#. translators: 1: product, 2: attribute, 3: value
+#: includes/Insights/Setup_Advisor.php:351
+#, php-format
+msgid "%1$s with %2$s = %3$s"
+msgstr ""
+
+#: includes/Plugin.php:136
+msgid "needs WooCommerce. Install and activate WooCommerce to use shared stock pools."
+msgstr ""
+
+#: includes/Rest/Rest_Controller.php:55
+msgid "Your session has expired. Reload the page and try again."
+msgstr ""
+
+#. translators: 1: product, 2: rule
+#: includes/Rest/Rest_Controller.php:320
+#, php-format
+msgid "%1$s, when %2$s"
+msgstr ""
+
+#. translators: %s: rule
+#: includes/Rest/Rest_Controller.php:322
+#, php-format
+msgid "Any product with %s"
+msgstr ""
+
+#: includes/Rest/Rest_Controller.php:512
+msgid "Enter a quantity above 0."
+msgstr ""
+
+#: includes/Rest/Rest_Controller.php:560
+msgid "That link no longer exists."
+msgstr ""
+
+#: includes/Rest/Rest_Controller.php:775
+msgid "The CSV is larger than 5 MB. Split it into smaller files."
+msgstr ""
+
+#: includes/Rest/Rest_Controller.php:825
+msgid "Create a pool first."
+msgstr ""
+
+#: includes/Rest/Rest_Controller.php:970
+msgid "Stock cannot be negative here."
+msgstr ""
+
+#. translators: %d: alert id
+#: includes/Rest/Rest_Controller.php:978
+#, php-format
+msgid "Correction from alert #%d"
+msgstr ""
+
+#: includes/Rest/Rest_Controller.php:1009
+msgid "Pick at least one valid pool to create."
+msgstr ""
+
+#: includes/Rest/Rest_Controller.php:1025
+msgid "Type a question first."
+msgstr ""
+
+#. translators: %s: product names
+#: includes/Stock/Cart_Guard.php:194
+#, php-format
+msgid "Sorry, we do not have enough stock for %s. Please lower the quantity in your cart."
+msgid_plural "Sorry, we do not have enough stock for %s together. Please lower the quantities in your cart."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: product name
+#: includes/Stock/Cart_Guard.php:211
+#, php-format
+msgid "Sorry, \"%s\" is out of stock right now."
+msgstr ""
+
+#. translators: 1: number of items, 2: product name
+#: includes/Stock/Cart_Guard.php:214
+#, php-format
+msgid "Sorry, only %1$d more of \"%2$s\" can be added to your cart."
+msgid_plural "Sorry, only %1$d more of \"%2$s\" can be added to your cart."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: order number
+#: includes/Stock/Order_Sync.php:219
+#, php-format
+msgid "Order #%s"
+msgstr ""
+
+#. translators: %s: list of pool changes
+#: includes/Stock/Order_Sync.php:258
+#, php-format
+msgid "Shared stock updated: %s"
+msgstr ""
+
+#. translators: 1: pool name
+#: includes/Stock/Watcher.php:49
+#, php-format
+msgid "%1$s is out of stock."
+msgstr ""
+
+#. translators: 1: pool name, 2: stock, 3: unit
+#: includes/Stock/Watcher.php:54
+#, php-format
+msgid "%1$s is low: %2$s%3$s left."
+msgstr ""
+
+#. translators: 1: site name, 2: pool name
+#: includes/Stock/Watcher.php:84
+#, php-format
+msgid "[%1$s] Out of stock: %2$s"
+msgstr ""
+
+#. translators: 1: site name, 2: pool name
+#: includes/Stock/Watcher.php:86
+#, php-format
+msgid "[%1$s] Low stock: %2$s"
+msgstr ""
+
+#. translators: 1: pool name, 2: stock, 3: unit
+#: includes/Stock/Watcher.php:89
+#, php-format
+msgid "The shared stock pool \"%1$s\" now has %2$s %3$s."
+msgstr ""
+
+#. translators: %s: threshold
+#: includes/Stock/Watcher.php:91
+#, php-format
+msgid "Low-stock threshold: %s"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Request cancelled."
+msgstr ""
+
+#: build/admin.js:1
+msgid "You appear to be offline."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Check your internet connection, then try again."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Could not reach your WordPress site."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Check your connection or reload the editor."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Your session has expired."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Save your work and reload the page."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Something went wrong."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Loading"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Generating…"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Generate with DEV3 AI"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Dismiss"
+msgstr ""
+
+#: build/admin.js:1
+msgid "AI paused: monthly budget reached"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Adjust the cap"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Try again"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Queued"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Running"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Done"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Cancelled"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Background job"
+msgstr ""
+
+#. translators: 1: processed, 2: total, 3: percent
+#: build/admin.js:1
+#, js-format
+msgid "%1$s of %2$s processed (%3$s%%)"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Starting…"
+msgstr ""
+
+#. translators: %s: failed count
+#: build/admin.js:1
+#, js-format
+msgid "%s failed"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Cancel"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Resume"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Retry failed"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Show failed items"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Estimated AI spend this month"
+msgstr ""
+
+#: build/admin.js:1
+msgid "AI paused"
+msgstr ""
+
+#: build/admin.js:1
+msgid "AI off"
+msgstr ""
+
+#. translators: %s: cap
+#: build/admin.js:1
+#, js-format
+msgid "of %s cap"
+msgstr ""
+
+#: build/admin.js:1
+msgid "AI turned off"
+msgstr ""
+
+#: build/admin.js:1
+msgid "AI paused · cap reached"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Near cap"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Monthly AI budget used"
+msgstr ""
+
+#. translators: 1: requests, 2: tokens
+#: build/admin.js:1
+#, js-format
+msgid "%1$s requests · %2$s tokens"
+msgstr ""
+
+#. translators: %s: date
+#: build/admin.js:1
+#, js-format
+msgid "resets %s"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Set a monthly cap"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Dismiss notification"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Choose from list"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Custom model ID…"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Google Gemini API key"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Create a free key in Google AI Studio, paste it here and click “Validate & save”. The key is encrypted in your database and never sent to the browser."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Get an API key"
+msgstr ""
+
+#: build/admin.js:1
+msgid "(opens in a new tab)"
+msgstr ""
+
+#: build/admin.js:1
+msgid "The key is defined by the DEV3SS_GEMINI_API_KEY constant in wp-config.php."
+msgstr ""
+
+#: build/admin.js:1
+msgid "API key"
+msgstr ""
+
+#. translators: %d: number of models
+#: build/admin.js:1
+#, js-format
+msgid "Connected — %d models available to this key."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Validate & save"
+msgstr ""
+
+#: build/admin.js:1
+msgid "API key removed."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Remove key"
+msgstr ""
+
+#: build/admin.js:1
+msgid "OpenSSL is not available on this server, so the key is only obfuscated. Consider defining DEV3SS_GEMINI_API_KEY in wp-config.php instead."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Models & generation"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Fast is used for most tasks; Pro for complex, long-form or structured work."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Refresh models"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Engine settings saved."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Save engine settings"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Fast model"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Recommended: gemini-2.5-flash"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Pro model"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Recommended: gemini-2.5-pro"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Image model"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Used for image generation. Default: gemini-2.5-flash-image"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Embedding model"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Used for semantic search. Default: gemini-embedding-001"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Temperature"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Lower = focused and consistent, higher = more creative (0–1)."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Max output tokens"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Upper limit per answer."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Reasoning"
+msgstr ""
+
+#: build/admin.js:1
+msgid "“Low” keeps generations fast and cheap; “Auto” lets the model think longer."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Low (fast)"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Auto (model decides)"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Budget & safety"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Costs are estimated from token counts and Google’s list prices. Check exact billing in Google AI Studio."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Budget and safety settings saved."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Save budget & safety"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Monthly AI budget cap"
+msgstr ""
+
+#: build/admin.js:1
+msgid "AI pauses when the estimated spend this month reaches the cap. 0 = no cap."
+msgstr ""
+
+#: build/admin.js:1
+msgid "AI features"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Turn off to stop every AI call. The plugin keeps working without AI."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Storefront AI"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Kill switch for visitor-facing AI. Visitors get the non-AI fallback."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Cache AI results"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Reuse answers for identical requests to save tokens."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Mask personal data"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Replace emails, phone and card numbers before text is sent to Google Gemini."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Pagination"
+msgstr ""
+
+#. translators: 1: first row, 2: last row, 3: total rows
+#: build/admin.js:1
+#, js-format
+msgid "%1$s–%2$s of %3$s"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Previous page"
+msgstr ""
+
+#. translators: 1: page, 2: pages
+#: build/admin.js:1
+#, js-format
+msgid "Page %1$s of %2$s"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Next page"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Actions"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Nothing here yet"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Sort by"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Default"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Requests"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Est. cost"
+msgstr ""
+
+#: build/admin.js:1
+msgid "No requests yet"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Token counts come from the AI provider’s usage metadata; costs are estimates. Check exact billing in Google AI Studio / Cloud Console."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Period"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Last 7 days"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Last 30 days"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Last 90 days"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Total tokens"
+msgstr ""
+
+#. translators: 1: input, 2: output
+#: build/admin.js:1
+#, js-format
+msgid "%1$s in · %2$s out"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Avg. response"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Errors"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Requests per day"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Requests per day chart"
+msgstr ""
+
+#. translators: 1: date, 2: requests, 3: tokens
+#: build/admin.js:1
+#, js-format
+msgid "%1$s — %2$s requests, %3$s tokens"
+msgstr ""
+
+#: build/admin.js:1
+msgid "No requests in this period yet"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Usage appears here as soon as an AI feature runs."
+msgstr ""
+
+#: build/admin.js:1
+msgid "By task"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Task"
+msgstr ""
+
+#: build/admin.js:1
+msgid "By model"
+msgstr ""
+
+#: build/admin.js:1
+msgid "By user"
+msgstr ""
+
+#: build/admin.js:1
+msgid "User"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Recent requests"
+msgstr ""
+
+#: build/admin.js:1
+msgid "No requests logged yet"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Time"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Where"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Time (s)"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Status"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Plugin sections"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Section"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Close"
+msgstr ""
+
+#: build/admin.js:1
+msgid "DEV3 AI draft"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Accept"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Changes"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Side by side"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Draft"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Not saved yet"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Draft view"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Edit JSON"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Edit draft"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Current"
+msgstr ""
+
+#. translators: %s: token count
+#: build/admin.js:1
+#, js-format
+msgid "%s tokens"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Cached"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Reject"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Regenerate"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Done editing"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Edit"
+msgstr ""
+
+#: build/admin.js:1
+msgid "The JSON is not valid. Fix it or regenerate."
+msgstr ""
